@@ -39,8 +39,8 @@ LOCAL_SHARED_LIBRARIES += libssl libcrypto libdl libz
 
 LOCAL_MODULE := libssh
 
-LOCAL_CFLAGS+=-O3
-LOCAL_CFLAGS += -fno-strict-aliasing
+LOCAL_CFLAGS += -O3
+LOCAL_CFLAGS += -Wno-error -fno-strict-aliasing
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -61,6 +61,9 @@ LOCAL_C_INCLUDES := external/openssl/include
 PRIVATE_C_INCLUDES := external/openssl/openbsd-compat
 
 LOCAL_SHARED_LIBRARIES += libssh libssl libcrypto libdl libz
+
+LOCAL_CFLAGS += -O3
+LOCAL_CFLAGS += -Wno-error -fno-strict-aliasing
 
 include $(BUILD_EXECUTABLE)
 
@@ -128,6 +131,9 @@ LOCAL_MODULE := sshd
 
 LOCAL_C_INCLUDES := external/openssl/include external/zlib
 PRIVATE_C_INCLUDES := external/openssl/openbsd-compat
+
+LOCAL_CFLAGS += -O3
+LOCAL_CFLAGS += -Wno-error -fno-strict-aliasing
 
 LOCAL_SHARED_LIBRARIES += libssh libssl libcrypto libdl libz libcutils
 
