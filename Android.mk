@@ -40,7 +40,8 @@ LOCAL_SHARED_LIBRARIES += libssl libcrypto libdl libz
 LOCAL_MODULE := libssh
 
 LOCAL_CFLAGS+=-O3
-LOCAL_CFLAGS += -fno-strict-aliasing -Wno-error=strict-aliasing 
+LOCAL_CFLAGS += -fno-strict-aliasing
+
 include $(BUILD_SHARED_LIBRARY)
 
 ###################### ssh ######################
